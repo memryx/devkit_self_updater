@@ -4,14 +4,14 @@
 # self-updater
 ###############################################################################
 
-printf "\033[96mChecking for script updates...\033[0m"
+printf "\033[96mChecking for script updates...\033[0m\n"
 cd /home/memryx/.memx_updater
 
 # check for updates
 git fetch origin
 reslog=$(git log HEAD..origin/main --oneline)
 if [[ "${reslog}" != "" ]]; then
-	printf "\033[92mUpdate found! Downloading and restarting myself...\033[0m"
+	printf "\033[92mUpdate found! Downloading and restarting myself...\033[0m\n"
 	# update available
 	git pull origin main
 	# restart myself
